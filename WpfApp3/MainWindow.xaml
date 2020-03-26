@@ -1,0 +1,31 @@
+﻿<Window x:Class="WpfApp3.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp3"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Border Grid.Column ="0"  BorderThickness="3" BorderBrush="Gray">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <Button Content="用户控件1" Click="ButtonClick1" Margin="3"/>
+                <!--使用按键事件来切换-->
+                <Button Content="用户控件2" Click="ButtonClick2" Margin="3" Grid.Row="1"/>
+            </Grid>
+        </Border>
+
+        <Border Grid.Column ="1" BorderBrush="Gray" BorderThickness="3">
+            <ContentPresenter  Content="{Binding UserContent}"/>
+            <!--使用内容呈现器来显示用户控件界面-->
+        </Border>
+    </Grid>
+</Window>
